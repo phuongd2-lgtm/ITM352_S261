@@ -1,7 +1,0 @@
-AI Usage Statement
-
-I used ChatGPT to help me brainstorm the topics and questions for my quiz app
-I reviewed the code, tested it, and made sure I understood how it works. 
-I asked AI to suggest me which file format I should you for my questions file and it suggested me to use json instead of py.
-I used AI mainly for help with the JSON file format, the score history feature, and the 50/50 feature.
-I asked AI to generate me a program that I can save the user's scores in another file. 
