@@ -1,0 +1,36 @@
+import json
+
+# dictionary of quiz questions
+questions = [
+    {
+      "question": "Which NBA player is known as 'King James'?",
+      "options": ["Stephen Curry", "LeBron James", "Kevin Durant", "Kobe Bryant"],
+      "answer": "b"
+    },
+    {
+      "question": "Which team did Michael Jordan play for most of his career?",
+      "options": ["Chicago Bulls", "Los Angeles Lakers", "Boston Celtics", "Miami Heat"],
+      "answer": "a"
+    },
+    {
+      "question": "Which NBA team is based in Los Angeles?",
+      "options": ["Golden State Warriors", "Los Angeles Lakers", "Chicago Bulls", "Miami Heat"],
+      "answer": "b"
+    },
+    {
+      "question": "How many players from one team are on the court in an NBA game?",
+      "options": ["4", "5", "6", "7"],
+      "answer": "b"
+    },
+    {
+      "question": "Which player is famous for the 'Skyhook' shot?",
+      "options": ["Magic Johnson", "Kareem Abdul-Jabbar", "Larry Bird", "Shaquille O'Neal"],
+      "answer": "b"
+    }
+]
+
+# save dictionary to JSON file
+with open("questions.json", "w") as file:
+    json.dump(questions, file, indent=4)
+
+print("Questions saved to questions.json")
