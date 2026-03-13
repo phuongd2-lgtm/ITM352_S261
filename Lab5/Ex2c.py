@@ -15,3 +15,12 @@ trip_list = [
     {"duration": 2.5, "fare": 10.50},
     {"duration": 2.6, "fare": 8.05}
 ]
+print("List of trip dictionaries:", trip_list)  
+#trips = dict(zip(trip_durations, trip_fare))
+#print("\nTrip dictionary:", trips)
+
+trip_num = input("What trip do you want? (1-4): ")
+trip_index = int(trip_num) - 1
+
+print(f"\nDuration: {trip_list[trip_index]['duration']} miles")
+print(f"Fare: ${trip_list[trip_index]['fare']: 2f}")

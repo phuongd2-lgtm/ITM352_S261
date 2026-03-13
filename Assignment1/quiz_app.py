@@ -49,7 +49,7 @@ for q in questions[:5]:
                 used_fifty = True
                 correct = q["answer"]
 
-                # remove first two wrong answers found
+                # To remove two wrong answers, we create a new dictionary with only the correct answer and one random wrong answer
                 removed = 0
                 new_choices = {}
 
