@@ -1,0 +1,27 @@
+import pandas as pd
+
+# lists of data
+ages = [25, 30, 35, 40, 45, 50, 18, 60, 65]
+names = ["John", "Jane", "Doe", "Smith", "Emily", "Michael", "Sarah", "David", "Laura"]
+gender = ["m", "f", "m", "m", "f", "m", "f", "m", "f"]
+
+# create dataframe
+df = pd.DataFrame({
+    "Name": names,
+    "Age": ages,
+    "Gender": gender
+})
+
+print("Full DataFrame:")
+print(df)
+print()
+
+# basic statistics
+print("Average age:", df["Age"].mean())
+print("Max age:", df["Age"].max())
+print("Min age:", df["Age"].min())
+print()
+
+# count genders
+print("Gender count:")
+print(df["Gender"].value_counts())
