@@ -1,6 +1,6 @@
 # Grab 1 month interest rate data from the Treasury website
 import ssl
-import pandas as pd 
+import pandas as pd
 import urllib.request
 import lxml
 
@@ -9,18 +9,21 @@ url = "https://home.treasury.gov/resource-center/data-chart-center/interest-rate
 # Open the URL and use read_html to read the data into a DataFrame
 ssl._create_default_https_context = ssl._create_unverified_context
 
-print("Opening url: " + url)
+print("Opening URL: " + url)
 web_page = urllib.request.urlopen(url)
 data_frame = pd.read_html(web_page)
 
-#print(data_frame[0].info())
-#print(data_frame[0]())
+# print(data_frame[0].info())
+#print(data_frame[0])
 
-#Extract the 1 mont interest rate data
-one_month_rate = data_frame[0].iloc[0,1]
+# Print the column names to understand the structure of the DataFrame
+print("Column names in the DataFrame:")
+print(data_frame[0].columns)
 
-#Interate through the data using intererows() and print the 1 month interest rate
-for index, row in data_frame[0].iterrows():
-    if row["Date"] == "2026-03-01":
-        print("1 month interest rate on 2026-03-01: (one_month_rate) %")
-        break
+# Extract the 1 month interest rate data
+int_rate_table = data_frame[0]  # Assuming the first table is the one we want
+
+# Print the table of 1 month interest rates
+print("\n1 Month Treasury Rates:\n")
+for index, row in int_rate_table.iterrows():
+    print(f"Index: {index}, Date: {row['Date']}, 1 Month Rate: {row['1 Mo']}")
