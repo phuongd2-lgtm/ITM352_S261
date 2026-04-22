@@ -7,13 +7,11 @@ app = Flask(__name__)
 app.secret_key = "quiz_secret_key"
 
 
-# load questions from json file
 def load_questions():
     with open("questions.json", "r") as file:
         return json.load(file)
 
 
-# save score to txt file
 def save_score(name, score, total):
     with open("scores.txt", "a") as file:
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -30,11 +28,8 @@ def index():
 
         questions = load_questions()
         random.shuffle(questions)
-
-        # only use first 5 questions
         questions = questions[:5]
 
-        # shuffle answer options for each question
         for q in questions:
             correct_answer_text = q["options"][["a", "b", "c", "d"].index(q["answer"])]
             random.shuffle(q["options"])
@@ -49,7 +44,7 @@ def index():
 
         return redirect(url_for("quiz"))
 
-    return render_template("index.html")
+    return render_template("index.html", name=session.get("name"))
 
 
 @app.route("/quiz", methods=["GET", "POST"])
@@ -65,7 +60,6 @@ def quiz():
 
     q = questions[current_question]
 
-    # make choices dictionary
     choices = {
         "a": q["options"][0],
         "b": q["options"][1],
@@ -89,9 +83,15 @@ def quiz():
 
         if answer == q["answer"]:
             session["score"] += 1
+            feedback = "Correct!"
+        else:
+            correct_letter = q["answer"]
+            correct_text = q["options"][["a", "b", "c", "d"].index(correct_letter)]
+            feedback = f"Incorrect. Correct answer: {correct_letter}) {correct_text}"
 
+        session["feedback"] = feedback
         session["current_question"] += 1
-        return redirect(url_for("quiz"))
+        return redirect(url_for("feedback"))
 
     return render_template(
         "quiz.html",
@@ -101,6 +101,14 @@ def quiz():
         total=len(questions),
         used_fifty=session["used_fifty"]
     )
+
+
+@app.route("/feedback")
+def feedback():
+    if "feedback" not in session:
+        return redirect(url_for("quiz"))
+
+    return render_template("feedback.html", feedback=session["feedback"])
 
 
 @app.route("/fifty")
@@ -167,4 +175,4 @@ def restart():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)

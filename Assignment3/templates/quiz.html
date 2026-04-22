@@ -2,8 +2,15 @@
 <html>
 <head>
     <title>NBA Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div style="width:100%; background:#ddd;">
+        <div style="width: {{ (number / total) * 100 }}%; background:green; color:white;">
+            {{ number }}/{{ total }}
+        </div>
+    </div>
+
     <h2>Question {{ number }} of {{ total }}</h2>
     <p>{{ question.question }}</p>
 
