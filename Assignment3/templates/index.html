@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Quiz</title>
+</head>
+<body>
+    <h1>Welcome to the NBA Quiz</h1>
+    <p>There are 5 questions for you to answer.</p>
+    <p>You can use 50/50 one time.</p>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label>Enter your name:</label>
+        <input type="text" name="name">
+        <button type="submit">Start Quiz</button>
+    </form>
+</body>
+</html>

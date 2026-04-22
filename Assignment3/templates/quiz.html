@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Quiz</title>
+</head>
+<body>
+    <h2>Question {{ number }} of {{ total }}</h2>
+    <p>{{ question.question }}</p>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% for letter, choice in choices.items() %}
+            <input type="radio" name="answer" value="{{ letter }}">
+            <label>{{ letter }}) {{ choice }}</label><br>
+        {% endfor %}
+        <br>
+        <button type="submit">Submit Answer</button>
+    </form>
+
+    {% if not used_fifty %}
+        <br>
+        <a href="{{ url_for('fifty') }}">Use 50/50</a>
+    {% else %}
+        <p>50/50 already used.</p>
+    {% endif %}
+</body>
+</html>

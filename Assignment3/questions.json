@@ -1,0 +1,32 @@
+[
+    {
+        "question": "Which player is known as King James?",
+        "options": ["LeBron James", "Stephen Curry", "Kevin Durant", "Kobe Bryant"],
+        "answer": "a"
+    },
+    {
+        "question": "Which team won the 2023 NBA Championship?",
+        "options": ["Denver Nuggets", "Miami Heat", "Boston Celtics", "Lakers"],
+        "answer": "a"
+    },
+    {
+        "question": "How many points is a free throw worth?",
+        "options": ["1", "2", "3", "4"],
+        "answer": "a"
+    },
+    {
+        "question": "Which player is famous for the skyhook?",
+        "options": ["Kareem Abdul-Jabbar", "Michael Jordan", "Shaquille O'Neal", "Tim Duncan"],
+        "answer": "a"
+    },
+    {
+        "question": "How many players from one team are on the court at one time?",
+        "options": ["5", "6", "7", "4"],
+        "answer": "a"
+    },
+    {
+        "question": "Which team does Stephen Curry play for?",
+        "options": ["Golden State Warriors", "Lakers", "Bulls", "Celtics"],
+        "answer": "a"
+    }
+]
