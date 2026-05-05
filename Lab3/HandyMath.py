@@ -1,35 +1,37 @@
+# Handy library of mathematical functions
+# Name: Phuong Duong 
+# Date: Jan. 27, 2026
+
 def midpoint(num1, num2):
-    """Calculate the midpoint between two numbers."""
+    """Calculate the midpoint between two numbers"""
     mid = (num1 + num2) / 2
     return mid
 
 def sqrt(number):
-    """Calculate the square root of a number."""
+    """Calculate the square root of a number"""
     if number < 0:
         return None
     return number ** 0.5
 
-def exponent(base,exp):
-    """Calculate the exponentiation of a base to a given exponent."""
+def exponent(base, exp, precision=2):
+    """Calculate the exponentiation of a base to a given exponent"""
     result = base ** exp
-    rounded_result = round(result, 2)
+    rounded_result = round(result, precision)
     return rounded_result
 
-def max(a, b):
-    """Return the larger of two numbers."""
-    result = a if a > b else b
-    return result
+def max(num1, num2):
+    # Return the maximum of two numbers
+    return num1 if num1 > num2 else num2
 
-def min(a, b):
-    """Return the smaller of two numbers."""
-    result = a if a < b else b
-    return result
+def min(num1, num2):
+    # Return the minimum of two numbers
+    return num1 if num1 < num2 else num2
+# In HandyMath.py
 
-def describe_function(x, y, func):
-    """Return a sentence showing the function name and its result on x and y."""
+def apply_function(x, y, func):
+    """Apply a function to x and y and return a formatted string."""
     result = func(x, y)
-    message = f"The function {func.__name__} {x},{y} = {result}"
-    return message
+    return f"The function {func.__name__} {x}, {y} = {result}"
 
 
 
