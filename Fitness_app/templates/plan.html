@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Workout Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ user.name }}'s Workout Plan</h1>
+
+        <div class="card">
+            <p><strong>Goal:</strong> {{ user.goal }}</p>
+            <p><strong>Body Type:</strong> {{ user.body_type }}</p>
+            <p><strong>Target Area:</strong> {{ user.target_area }}</p>
+            <p><strong>Level:</strong> {{ user.level }}</p>
+        </div>
+
+        <h2>Recommended Routine</h2>
+
+        <table>
+            <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Rest</th>
+            </tr>
+
+            {% for item in workout_plan.plan %}
+            <tr>
+                <td>{{ item.exercise }}</td>
+                <td>{{ item.sets }}</td>
+                <td>{{ item.reps }}</td>
+                <td>{{ item.rest }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Personal Recommendation</h2>
+        <p>{{ workout_plan.recommendation }}</p>
+
+        <a href="/">Create Another Plan</a>
+        <a href="/log">Log Progress</a>
+    </div>
+</body>
+</html>

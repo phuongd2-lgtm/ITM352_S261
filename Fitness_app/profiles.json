@@ -1,0 +1,102 @@
+[
+    {
+        "name": "phuong",
+        "goal": "lose weight",
+        "body_type": "mesomorph",
+        "target_area": "arms",
+        "level": "intermediate",
+        "height": 175.0,
+        "weight": 30.0,
+        "notes": ""
+    },
+    {
+        "name": "Nazca",
+        "goal": "lose weight",
+        "body_type": "ectomorph",
+        "target_area": "stomach",
+        "level": "intermediate",
+        "height": 158.0,
+        "weight": 50.0,
+        "notes": ""
+    },
+    {
+        "name": "thanh",
+        "goal": "lose weight",
+        "body_type": "ectomorph",
+        "target_area": "arms",
+        "level": "beginner",
+        "height": 175.0,
+        "weight": 50.0,
+        "notes": ""
+    },
+    {
+        "name": "phuong",
+        "goal": "lose weight",
+        "body_type": "mesomorph",
+        "target_area": "arms",
+        "level": "intermediate",
+        "height": 165.0,
+        "weight": 55.0,
+        "notes": ""
+    },
+    {
+        "name": "phuong",
+        "goal": "strength",
+        "body_type": "ectomorph",
+        "target_area": "arms",
+        "level": "intermediate",
+        "height": 155.0,
+        "weight": 60.0,
+        "notes": ""
+    },
+    {
+        "name": "phuong",
+        "goal": "lose weight",
+        "body_type": "mesomorph",
+        "target_area": "legs",
+        "level": "intermediate",
+        "height": 150.0,
+        "weight": 70.0,
+        "notes": ""
+    },
+    {
+        "name": "phuong",
+        "goal": "lose weight",
+        "body_type": "mesomorph",
+        "target_area": "arms",
+        "level": "intermediate",
+        "height": 160.0,
+        "weight": 70.0,
+        "notes": ""
+    },
+    {
+        "name": "phuong",
+        "goal": "lose weight",
+        "body_type": "ectomorph",
+        "target_area": "arms",
+        "level": "intermediate",
+        "height": 170.0,
+        "weight": 30.0,
+        "notes": ""
+    },
+    {
+        "name": "phuong",
+        "goal": "lose weight",
+        "body_type": "ectomorph",
+        "target_area": "arms",
+        "level": "beginner",
+        "height": 155.0,
+        "weight": 60.0,
+        "notes": ""
+    },
+    {
+        "name": "Nazca",
+        "goal": "gain muscle",
+        "body_type": "mesomorph",
+        "target_area": "arms",
+        "level": "intermediate",
+        "height": 150.0,
+        "weight": 57.0,
+        "notes": ""
+    }
+]

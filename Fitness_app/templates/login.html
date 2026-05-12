@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>User Login</h1>
+        <p>Enter your name to open your fitness profile.</p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="/login" method="POST">
+            <label>Your Name:</label>
+            <input type="text" name="name" placeholder="Example: Phuong">
+
+            <button type="submit">Log In</button>
+        </form>
+
+        <a href="/">Back Home</a>
+    </div>
+</body>
+</html>

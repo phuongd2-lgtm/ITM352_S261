@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutrition Tips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Nutrition Tips</h1>
+        <p>Simple food and hydration advice to support your workout plan.</p>
+
+        <div class="card">
+            {% for tip in tips %}
+                <p>🥗 {{ tip }}</p>
+            {% endfor %}
+        </div>
+
+        <a href="/profile">Back to Profile</a>
+        <a href="/">Home</a>
+    </div>
+</body>
+</html>

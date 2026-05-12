@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <p>This page shows overall app activity and user progress data.</p>
+
+        <div class="card">
+            <p><strong>Total Users:</strong> {{ summary.total_users }}</p>
+            <p><strong>Total Workouts Logged:</strong> {{ summary.total_workouts }}</p>
+            <p><strong>Overall Completion Percentage:</strong> {{ summary.completion_percentage }}%</p>
+            <p><strong>Leaderboard Users:</strong> {{ summary.leaderboard_count }}</p>
+        </div>
+
+        <h2>Leaderboard Preview</h2>
+
+        {% if leaders %}
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>User</th>
+                    <th>Points</th>
+                </tr>
+
+                {% for user in leaders %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.points }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No leaderboard data yet.</p>
+        {% endif %}
+
+        <a href="/">Home</a>
+        <a href="/leaderboard">Full Leaderboard</a>
+    </div>
+</body>
+</html>

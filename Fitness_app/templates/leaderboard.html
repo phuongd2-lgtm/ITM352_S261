@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Fitness Leaderboard</h1>
+        <p>Users earn points by logging workouts. Completed workouts earn more points.</p>
+
+        {% if leaders %}
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>User</th>
+                    <th>Points</th>
+                </tr>
+
+                {% for user in leaders %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.points }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No leaderboard data yet. Log a workout first!</p>
+        {% endif %}
+
+        <a href="/log">Log Workout</a>
+        <a href="/">Back Home</a>
+    </div>
+</body>
+</html>

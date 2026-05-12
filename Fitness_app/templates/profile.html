@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ username }}'s Fitness Profile</h1>
+        <p>This page shows your saved workout progress, streak, badges, and history.</p>
+
+        <div class="card">
+            <p><strong>Total Workouts:</strong> {{ summary.total_workouts }}</p>
+            <p><strong>Completed Workouts:</strong> {{ summary.completed_workouts }}</p>
+            <p><strong>Average Weight Used:</strong> {{ summary.average_weight }}</p>
+            <p><strong>Average Reps:</strong> {{ summary.average_reps }}</p>
+            <p><strong>Completion Percentage:</strong> {{ completion_percentage }}%</p>
+            <p><strong>Current Workout Streak:</strong> {{ streak }} day(s)</p>
+        </div>
+
+        <h2>Achievement Badges</h2>
+        <div class="card">
+            {% for badge in badges %}
+                <p>🏆 {{ badge }}</p>
+            {% endfor %}
+        </div>
+
+        {% if logs %}
+            <h2>Your Workout History</h2>
+
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Workout</th>
+                    <th>Weight</th>
+                    <th>Reps</th>
+                    <th>Completed</th>
+                </tr>
+
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log.date }}</td>
+                    <td>{{ log.workout }}</td>
+                    <td>{{ log.weight }}</td>
+                    <td>{{ log.reps }}</td>
+                    <td>{{ log.completed }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>You do not have any saved workouts yet.</p>
+        {% endif %}
+
+        <a href="/log">Log New Workout</a>
+        <a href="/trainer">Trainer Match</a>
+        <a href="/nutrition">Nutrition Tips</a>
+        <a href="/">Home</a>
+        <a href="/logout">Log Out</a>
+    </div>
+</body>
+</html>

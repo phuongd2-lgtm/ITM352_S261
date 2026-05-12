@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log Progress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<label>Your Name:</label>
+<input type="text" name="name" placeholder="Example: Phuong">
+
+
+<body>
+    <div class="container">
+        <h1>Log Workout Progress</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="/log" method="POST">
+            <label>Date:</label>
+            <input type="date" name="date">
+
+            <label>Workout Name:</label>
+            <input type="text" name="workout" placeholder="Example: Leg Day">
+
+            <label>Weight Used:</label>
+            <input type="text" name="weight" placeholder="Example: 50">
+
+            <label>Reps Completed:</label>
+            <input type="text" name="reps" placeholder="Example: 12">
+
+            <label>Completed Workout?</label>
+            <select name="completed">
+                <option value="">Choose one</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="submit">Save Progress</button>
+        </form>
+
+        <a href="/">Back Home</a>
+    </div>
+</body>
+</html>

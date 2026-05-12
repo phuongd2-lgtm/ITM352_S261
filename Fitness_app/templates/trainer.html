@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trainer Match</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Personal Trainer Match</h1>
+        <p>Fill out this form to get matched with a trainer based on your fitness goal.</p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="/trainer" method="POST">
+            <label>Your Name:</label>
+            <input type="text" name="name">
+
+            <label>Fitness Goal:</label>
+            <select name="goal">
+                <option value="">Choose one</option>
+                <option value="lose weight">Lose Weight</option>
+                <option value="gain muscle">Gain Muscle</option>
+                <option value="strength">Strength</option>
+            </select>
+
+            <label>Fitness Level:</label>
+            <select name="level">
+                <option value="">Choose one</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+
+            <label>Message to Trainer:</label>
+            <textarea name="message" placeholder="Example: I want help staying consistent."></textarea>
+
+            <button type="submit">Find My Trainer</button>
+        </form>
+
+        {% if trainer_match %}
+            <div class="card">
+                <h2>Your Trainer Match</h2>
+                <p><strong>Name:</strong> {{ trainer_match.name }}</p>
+                <p><strong>Specialty:</strong> {{ trainer_match.specialty }}</p>
+                <p><strong>Recommended For:</strong> {{ trainer_match.level }}</p>
+                <p>{{ trainer_match.message }}</p>
+            </div>
+        {% endif %}
+
+        <a href="/">Back Home</a>
+        <a href="/leaderboard">View Leaderboard</a>
+    </div>
+</body>
+</html>

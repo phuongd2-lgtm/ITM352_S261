@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Old Progress Logs</h1>
+        <p>Here are all the workouts you saved before.</p>
+
+        <div class="card">
+            <p><strong>Total Workouts:</strong> {{ summary.total_workouts }}</p>
+            <p><strong>Completed Workouts:</strong> {{ summary.completed_workouts }}</p>
+            <p><strong>Average Weight Used:</strong> {{ summary.average_weight }}</p>
+            <p><strong>Average Reps:</strong> {{ summary.average_reps }}</p>
+        </div>
+
+        {% if logs %}
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Workout</th>
+                    <th>Weight</th>
+                    <th>Reps</th>
+                    <th>Completed</th>
+                </tr>
+
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log.date }}</td>
+                    <td>{{ log.workout }}</td>
+                    <td>{{ log.weight }}</td>
+                    <td>{{ log.reps }}</td>
+                    <td>{{ log.completed }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No old progress logs yet. Add one first!</p>
+        {% endif %}
+
+        <a href="/log">Add New Progress</a>
+        <a href="/">Back Home</a>
+    </div>
+</body>
+</html>
