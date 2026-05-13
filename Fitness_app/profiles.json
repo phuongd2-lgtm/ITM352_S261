@@ -98,5 +98,55 @@
         "height": 150.0,
         "weight": 57.0,
         "notes": ""
+    },
+    {
+        "name": "phuong",
+        "goal": "lose weight",
+        "body_type": "mesomorph",
+        "target_area": "stomach",
+        "level": "beginner",
+        "height": 155.0,
+        "weight": 55.0,
+        "notes": ""
+    },
+    {
+        "name": "Nazca",
+        "goal": "gain muscle",
+        "body_type": "ectomorph",
+        "target_area": "arms",
+        "level": "beginner",
+        "height": 150.0,
+        "weight": 52.0,
+        "notes": ""
+    },
+    {
+        "name": "phuong",
+        "goal": "strength",
+        "body_type": "endomorph",
+        "target_area": "legs",
+        "level": "intermediate",
+        "height": 166.0,
+        "weight": 58.0,
+        "notes": ""
+    },
+    {
+        "name": "Thanh",
+        "goal": "gain muscle",
+        "body_type": "mesomorph",
+        "target_area": "full body",
+        "level": "intermediate",
+        "height": 167.0,
+        "weight": 54.0,
+        "notes": ""
+    },
+    {
+        "name": "Thanh",
+        "goal": "lose weight",
+        "body_type": "mesomorph",
+        "target_area": "stomach",
+        "level": "intermediate",
+        "height": 157.0,
+        "weight": 77.0,
+        "notes": ""
     }
 ]
